@@ -743,6 +743,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)showNotification;
 
+- (void)checkForNotificationsWithCompletion:(void (^)(NSArray *notifications))completion;
+
 #pragma mark - Mixpanel A/B Testing
 
 /*!
