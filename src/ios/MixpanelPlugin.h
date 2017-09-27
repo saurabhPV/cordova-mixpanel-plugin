@@ -26,6 +26,7 @@
 -(void)track:(CDVInvokedUrlCommand*)command;
 -(void)timeEvent:(CDVInvokedUrlCommand*)command;
 -(void)unregisterSuperProperty:(CDVInvokedUrlCommand*)command;
+-(void)showRating:(CDVInvokedUrlCommand*)command;
 
 
 // PEOPLE API
