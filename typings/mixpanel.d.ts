@@ -7,6 +7,7 @@ interface IMixpanel {
   alias(alias: string, originalId: string, onSuccess: () => void, onFail: (errors: string) => void): void;
   createAlias(alias: string, originalId: string, onSuccess: () => void, onFail: (errors: string) => void): void;
   distinctId(onSuccess: () => void, onFail: (errors: string) => void): void;
+  shouldShowRating(onSuccess: () => void, onFail: (errors: string) => void): void;
   flush(onSuccess: () => void, onFail: (errors: string) => void): void;
   getSuperProperties(onSuccess: () => void, onFail: (errors: string) => void): void;
   identify(id: string, onSuccess: () => void, onFail: (errors: string) => void): void;
