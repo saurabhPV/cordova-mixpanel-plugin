@@ -25,7 +25,9 @@ mixpanel.alias = mixpanel.createAlias = function(alias, originalId, onSuccess, o
 mixpanel.distinctId = function(onSuccess, onFail) {
   exec(onSuccess, onFail, 'Mixpanel', 'distinctId', []);
 };
-
+mixpanel.showRating = function(onSuccess, onFail) {
+  exec(onSuccess, onFail, 'Mixpanel', 'showRating', []);
+};
 mixpanel.flush = function(onSuccess, onFail) {
   exec(onSuccess, onFail, 'Mixpanel', 'flush', []);
 };
