@@ -371,6 +371,30 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+-(void)showRating:(CDVInvokedUrlCommand*)command;
+{
+
+   __block Mixpanel* mixpanelInstance = [Mixpanel sharedInstance];
+
+    if (mixpanelInstance == nil)
+        {
+        CDVPluginResult* pluginResult = nil;
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Mixpanel not initialized"];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+        }
+    else
+        {
+
+        [mixpanelInstance checkForNotificationsWithCompletion:^(NSArray * _Nonnull notifications) {
+            if(notifications.count > 0){
+                CDVPluginResult* pluginResult = nil;
+                 pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+                [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+            }
+        }];
+    
+        }
+}
 
 -(void)people_unset:(CDVInvokedUrlCommand*)command;
 {
