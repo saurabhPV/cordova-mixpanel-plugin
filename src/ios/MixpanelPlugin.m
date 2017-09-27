@@ -371,7 +371,7 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
--(void)showRating:(CDVInvokedUrlCommand*)command;
+-(void)shouldShowRating:(CDVInvokedUrlCommand*)command;
 {
 
    __block Mixpanel* mixpanelInstance = [Mixpanel sharedInstance];
